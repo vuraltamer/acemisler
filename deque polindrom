@@ -1,0 +1,23 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import re, sys
+from deque import Deque
+
+def polindrom(strin):
+	deq=Deque()
+	for i in strin:
+		deq.addRear(i)
+
+	Balance=True
+	while Balance==True and deq.size()>1:
+		a=deq.removeFront()
+		b=deq.removeRear()
+		if a!=b:
+			Balance=False
+			return "polindrom yok."
+			break
+		if Balance==True and deq.size()==1:
+			return "polindrom var"
+
+print polindrom("eyedipadanadapideye")
